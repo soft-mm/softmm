@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/animate.css"/>
     <link rel="icon" type="image/vnd.icon" href="images/favicon.png">
 		<link rel="stylesheet" href="css/style.css" />
+    
 
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -243,44 +244,59 @@
 
     <!-- FOOTER CONTACT -->
 
-     <section id="contact" class="dark">
+    <section id="contact" class="dark">
       <header class="title">
         <h2>Contáctanos <span></span></h2>
         <p>¿Listo para llevar tu negocio al siguiente nivel? Escríbenos y recibe un presupuesto sin compromiso. ¡Hagamos realidad tu página web hoy mismo!</p>
       </header>
-
+    
       <div class="container">
         <div class="row">
           <div class="col-md-8 animated" data-animate="fadeInLeft">
-            <form action="#">
+            <form id="contactForm" action="https://formsubmit.co/d1f8b9d2871667bc9157d4c8079463ea" method="POST" onsubmit="handleSubmit(event)">
               <div class="row">
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Tu nombre">
+                  <input type="text" class="form-control" placeholder="Tu nombre" name="nombre">
                 </div>
                 <div class="col-md-6">
-                  <input type="email" class="form-control" placeholder="Tu Email">
+                  <input type="email" class="form-control" placeholder="Tu Email" name="email">
                 </div>
                 <div class="col-md-12">
-                  <textarea class="form-control" rows="3" placeholder="Escribe aquí tu mensaje:"></textarea>
+                  <textarea class="form-control" rows="3" placeholder="Escribe aquí tu mensaje:" name="mensaje"></textarea>
                 </div>
                 <div class="col-md-12">
-                  <button class="btn btn-default submit">Enviar mensaje</button>
+                  <button type="submit" class="btn btn-default submit">Enviar mensaje</button>
+                  <input type="hidden" name="_next" value="https://soft-mm.github.io/softmm/">
+                  <input type="hidden" name="_captcha" value="false">
                 </div>
               </div>
             </form>
           </div>
-
+    
           <div class="col-md-4 animated" data-animate="fadeInRight">
             <address>
-                <span><i class="fa fa-map-marker fa-lg"></i>Nezahualcoyotl Edo. Mex.</span>
-                <span><i class="fa fa-phone fa-lg"></i> 56 4909 8103</span>
-                <span><i class="fa fa-envelope-o fa-lg"></i> <a href="mailto:contact@example.com">soft.mm.2024@gmail.com</a></span>
+              <span><i class="fa fa-map-marker fa-lg"></i>Nezahualcoyotl Edo. Mex.</span>
+              <span><i class="fa fa-phone fa-lg"></i> 56 4909 8103</span>
+              <span><i class="fa fa-envelope-o fa-lg"></i> <a href="mailto:contact@example.com">soft.mm.2024@gmail.com</a></span>
             </address>
           </div>
-		  
+          
         </div>
       </div>
     </section>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault(); // Evita la acción predeterminada de envío del formulario
+    
+        // Mostrar el mensaje de éxito
+        alert("¡Tu mensaje se ha enviado con éxito!");
+    
+        // Enviar el formulario después de mostrar el mensaje (esto lo hará de forma invisible)
+        const form = document.getElementById("contactForm");
+        form.submit(); // Esto enviará el formulario después del alert
+      }
+    </script>
+        
 
     <section id="footer">
       <div class="container">
