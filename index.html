@@ -16,8 +16,6 @@
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 
 	</head>
 	<body>
@@ -274,11 +272,10 @@
                 </div>
                 <div class="col-md-12">
                   <textarea class="form-control" rows="3" placeholder="Escribe aquí tu mensaje:" name="mensaje" required></textarea>
-                    <!-- Widget de reCAPTCHA v2 -->           
-                </div>             
-                
+                </div>
+                <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 <div class="col-md-12">
-                  <div class="g-recaptcha" data-sitekey="6Lc6X88qAAAAAHD07xFlTmS10XnKIc4zURvA8h13"></div> <br><button type="submit" class="btn btn-default submit">Enviar mensaje</button>
+                  <button type="submit" class="btn btn-default submit">Enviar mensaje</button>
                   <input type="hidden" name="_next" value="https://soft-mm.github.io/softmm/">
                   <input type="hidden" name="_captcha" value="false">
                 </div>
